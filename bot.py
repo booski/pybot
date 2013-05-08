@@ -113,7 +113,11 @@ def act(tup):
             if msg == sendnick:
                 msg=''
 
-            log(sendnick+" left "+chan+" ["+msg+"]")
+            log(sendnick+" left "+chan+" ("+msg+")")
+
+        elif command == 'QUIT':
+            msg = tup[2]
+            log(sendnick+" has quit ("+msg+")")
 
         if not res == '':
             print(res)
